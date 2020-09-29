@@ -8,6 +8,7 @@ const express = require('express');
 //store fuction into a new variable
 const app = express()
 
+const port = process.env.PORT || 3000
 //define path for express config
 const indexDirectory = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views')
@@ -111,7 +112,7 @@ app.get('/product', (req, res) => {
     })
 
    
-    app.listen(3000, () => {
-        console.log('Server is Up and on port 3000')
+app.listen(port, () => {
+    console.log('Server is Up and on port ' + port)
     })
 
